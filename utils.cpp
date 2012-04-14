@@ -55,6 +55,16 @@ std::queue<std::string> vectorToQueue(const std::vector<std::string> &v) {
     return q;
 }
 /////////////////////////////////////////////////
+std::deque<std::string> vectorToDeque(const std::vector<std::string> &v) {
+    std::deque<std::string> q;
+
+    for (unsigned int i = 0; i < v.size(); i++) {
+        q.push_back(v[i]);
+    }
+
+    return q;
+}
+/////////////////////////////////////////////////
 std::string replace(char t, char d, const std::string & str) {
     std::string result(str);
 
@@ -68,5 +78,25 @@ std::string replace(char t, char d, const std::string & str) {
     }
 
     return result;
+}
+/////////////////////////////////////////////////
+std::string join(char p, const std::vector< std::string > &list, int start, int end)
+{
+    std::stringstream ss;
+
+    unsigned int last = list.size() - 1;
+
+    if (end == -1) {
+        end = list.size();
+    }
+
+    for (unsigned int i = start; i < end; i++) {
+        if (i < last)
+            ss << list[i] << p;
+        else
+            ss << list[i];
+    }
+
+    return ss.str();
 }
 /////////////////////////////////////////////////

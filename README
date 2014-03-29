@@ -1,0 +1,7 @@
+This is a thin library that provides perl-like convenience methods.
+
+deWhiteSpace*
+join
+split
+strip
+
